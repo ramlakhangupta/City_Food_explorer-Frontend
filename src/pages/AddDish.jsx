@@ -86,8 +86,6 @@ function AddDish() {
       return;
     }
     
-    toast.success("Your request sent to admin");
-    setLoading(true);
 
     try {
       const form = new FormData();
@@ -107,6 +105,7 @@ function AddDish() {
       });
   
       const data = await res.json();
+      console.log(data);
       
       if (res.ok) {
         toast.success("your request sent to admin for approval", {
@@ -126,8 +125,6 @@ function AddDish() {
         theme: 'colored'
       });
     } finally {
-      setLoading(false);
-      navigate('/');
     }
   };
 
