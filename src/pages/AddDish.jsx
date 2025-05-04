@@ -74,78 +74,72 @@ function AddDish() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  const token = cookies.get("token");
-
-  if (!token) {
-    toast.error("Please Login First", {
-      onClose: () => { window.location.href = '/login'; },
-      autoClose: 1000,
-      closeOnClick: true,
-      pauseOnHover: false,
-      theme: 'colored'
-    });
-    return;
-  }
-
-  setLoading(true); // Start spinner
-
-  try {
-    const form = new FormData();
-    for (let key in formData) {
-      form.append(key, formData[key]);
+    e.preventDefault();
+    const token = cookies.get("token");
+  
+    if (!token) {
+      toast.error("Please Login First", {
+        onClose: () => { window.location.href = '/login'; },
+        autoClose: 1000,
+        theme: 'colored'
+      });
+      return;
     }
-    if (selectedImage) {
-      form.append('img', selectedImage);
-    }
+    
+    toast.success("Your request sent to admin");
+    setLoading(true);
 
-    const res = await fetch(`${backendUrl}/api/addDish/${user?._id}`, {
-      method: 'POST',
-      headers: {
-        'Authorization': token
-      },
-      body: form
-    });
-
-    const data = await res.json();
-    if (res.ok) {
-      toast.success(data.message, {
-        onClose: () => {
-          window.location.href = '/';
+    try {
+      const form = new FormData();
+      for (let key in formData) {
+        form.append(key, formData[key]);
+      }
+      if (selectedImage) {
+        form.append('img', selectedImage);
+      }
+  
+      const res = await fetch(`${backendUrl}/api/addDish/${user?._id}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': token // ✅ Only needed header
         },
+        body: form
+      });
+  
+      const data = await res.json();
+      
+      if (res.ok) {
+        toast.success("your request sent to admin for approval", {
+          onClose: () => navigate('/'), // ✅ Move navigation here
+          autoClose: 1500,
+          theme: 'colored'
+        });
+      } else {
+        toast.error("Please Fill Again the request form ", {
+          autoClose: 1500,
+          theme: 'colored'
+        });
+      }
+    } catch (error) {
+      toast.error("Network Error", {
         autoClose: 1500,
-        closeOnClick: true,
-        pauseOnHover: false,
         theme: 'colored'
       });
-    } else {
-      toast.error(data.message, {
-        autoClose: 1500,
-        closeOnClick: true,
-        pauseOnHover: false,
-        theme: 'colored'
-      });
+    } finally {
+      setLoading(false);
+      navigate('/');
     }
-  } catch (error) {
-    toast.error("Network Error", {
-      autoClose: 1500,
-      closeOnClick: true,
-      pauseOnHover: false,
-      theme: 'colored'
-    });
-  } finally {
-    setLoading(false); // Stop spinner
+  };
+
+
+  if(loading) {
+    return (
+      <div className="">
+        <Spinner />
+      </div>
+    );
   }
-};
 
-
-if (loading) {
-  return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-white bg-opacity-80">
-      <Spinner />
-    </div>
-  );
-}
 
 
   return (
@@ -264,6 +258,7 @@ if (loading) {
           {/* Submit Button */}
           <button
             type="submit"
+            
             className="w-full bg-[#a28c79] text-white py-2 px-4 rounded-lg hover:bg-[#f0c9a6] transition-all"
           >
             Submit Request
@@ -271,8 +266,10 @@ if (loading) {
         </form>
         
         
-      <CustomToast />
+      
       </div>
+
+      <CustomToast />
     </div>
   );
 }

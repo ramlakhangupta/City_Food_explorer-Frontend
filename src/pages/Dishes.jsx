@@ -150,7 +150,7 @@ const Dishes = () => {
       <div className="relative mt-12 z-10 max-w-5xl mx-auto">
       <h1 className="text-5xl mb-8 items-center flex justify-center font-bold text-[#feb240]">Your searched Dish {dish.dishName} </h1>
         <img
-          src={`${backendUrl}/uploads/${dish.img}`}
+          src={dish.img}
           alt={dish.dishName}
           className="w-full max-h-[450px] object-cover rounded-xl shadow-lg mb-8"
         />

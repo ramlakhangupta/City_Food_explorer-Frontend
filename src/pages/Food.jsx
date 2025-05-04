@@ -222,7 +222,7 @@ const Food = () => {
             {dishes.map((dish) => (
               <div key={dish._id}  className=" hover:cursor-pointer bg-white bg-opacity-90 p-6 rounded-2xl shadow-md text-left relative font-[Poppins]">
                   <div onClick={() => navigate(`/searchedDish/${dish.dishName}`)}>
-                    <img src={`${backendUrl}/uploads/${dish.img}`} alt={dish.dishName} className="w-full h-48 object-cover rounded-xl mb-4" />
+                    <img src={dish.img} alt={dish.dishName} className="w-full h-48 object-cover rounded-xl mb-4" />
                     <h3 className="text-xl font-bold mb-2 text-[#a28c79]">{dish.dishName} - ₹{dish.dishPrice}</h3>
                     <p className="text-gray-800 mb-2">{dish.description}</p>
                     <p className="text-sm text-gray-700 mb-1"><span className="font-semibold">Shop:</span> {dish.shopName}</p>

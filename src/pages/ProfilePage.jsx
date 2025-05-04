@@ -438,7 +438,7 @@ const ProfilePage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {likedDishes.map((dish) => (
                 <div key={dish._id} onClick={() => navigate(`/searchedDish/${dish.dishName}`)} className="cursor-pointer bg-white/10 hover:bg-white/20 transition p-4 rounded-lg shadow-lg">
-                  <img src={`${backendUrl}/uploads/${dish.img}`} alt={dish.dishName} className="w-full h-40 object-cover rounded-lg mb-3" />
+                  <img src={dish.img} alt={dish.dishName} className="w-full h-40 object-cover rounded-lg mb-3" />
                   <h3 className="text-xl font-bold text-[#feb240]">{dish.dishName}</h3>
                   <p className="text-sm text-gray-300">{dish.shopName}, {dish.shopLocation}</p>
                   <p className="text-sm text-[#ffd69f] mt-1">₹{dish.dishPrice}</p>
@@ -465,7 +465,7 @@ const ProfilePage = () => {
                   className=" w-[20rem] bg-white/10 hover:bg-white/20 transition p-5 rounded-lg shadow-lg"
                 >
                   <img
-                    src={`${backendUrl}/uploads/${dish.img}`}
+                    src={dish.img}
                     alt={dish.dishName}
                     className="w-full h-40 object-cover rounded-lg mb-3 cursor-pointer"
                     onClick={() => navigate(`/searchedDish/${dish.dishName}`)}
@@ -510,7 +510,7 @@ const ProfilePage = () => {
                     <div key={dish._id} className="w-[90%] bg-white/10 p-4 rounded-xl shadow-lg flex flex-col sm:flex-row gap-4">
                       {/* Image */}
                       <div className="w-full sm:w-48 h-40 overflow-hidden rounded-lg">
-                        <img src={`${backendUrl}/uploads/${dish.img}`} alt={dish.dishName} className="w-full h-full object-cover" />
+                        <img src={dish.img} alt={dish.dishName} className="w-full h-full object-cover" />
                       </div>
 
                       {/* Details */}
@@ -556,7 +556,7 @@ const ProfilePage = () => {
                     <div key={dish._id} className="w-[90%] bg-white/10 p-4 rounded-xl shadow-lg flex flex-col sm:flex-row gap-4">
                       {/* Image */}
                       <div className="w-full sm:w-48 h-40 overflow-hidden rounded-lg">
-                        <img src={`${backendUrl}/uploads/${dish.img}`} alt={dish.dishName} className="w-full h-full object-cover" />
+                        <img src={dish.img} alt={dish.dishName} className="w-full h-full object-cover" />
                       </div>
 
                       {/* Details */}

@@ -72,7 +72,7 @@ const Navbar = () => {
                 <FaTachometerAlt className="text-[#9d816a]" />
                 Dashboard
               </a>
-              <a href="/settings" className="flex items-center gap-3 text-gray-700 font-semibold px-4 py-2 hover:bg-[#ffe7cf] rounded-md transition-all duration-300">
+              <a href="/profile" className="flex items-center gap-3 text-gray-700 font-semibold px-4 py-2 hover:bg-[#ffe7cf] rounded-md transition-all duration-300">
                 <FaUserCog className="text-[#9d816a]" />
                 Settings
               </a>

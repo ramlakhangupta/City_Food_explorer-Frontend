@@ -46,7 +46,7 @@ const DishOfTheDay = () => {
 
       <div className="backdrop-blur-xl bg-white/10 border border-[#e2c19e]/20 shadow-xl rounded-xl overflow-hidden flex flex-col md:flex-row">
         <img
-          src={`${backendUrl}/uploads/${dish.img}`}
+          src={dish.img}
           alt={dish.dishName}
           className="w-full md:w-1/2 h-[300px] object-cover grayscale-0 transition duration-500 hover:scale-105"
         />

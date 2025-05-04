@@ -78,7 +78,7 @@ const ExploreMore = () => {
               cardData={{
                 heading: dish.dishName,
                 location: dish.shopLocation,
-                image: `${backendUrl}/uploads/${dish.img}`,
+                image: dish.img,
                 description: dish.description,
                 city: dish.cityName,
                 taste: dish.category,
