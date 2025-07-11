@@ -112,7 +112,7 @@ const Home = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.1 }}
-            className="text-center text-3xl lg:text-4xl font-semibold mt-7 font-nosifer "
+            className="text-center  text-[#e8e8e8] text-3xl lg:text-4xl font-semibold mt-7 font-nosifer "
           >
             Food Discovery Hub
             
@@ -123,7 +123,7 @@ const Home = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.1 }}
-            className=" mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-300"
+            className=" sm:mt-0 mt-[2rem] w-[90%] text-center text-base lg:text-lg font-bold text-richblack-300"
           >
            With our platform, you can share your favorite street foods and famous city dishes with the world. Upload mouth-watering delicacies, showcase hidden gems, and help food lovers discover new flavors. Become a valued contributor and celebrate the rich diversity of local cuisine! 🍽️
           </motion.div>
@@ -134,8 +134,8 @@ const Home = () => {
       <div className="relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center  text-white justify-between">
         <ExploreMore/>
       </div>
+      
       <div >
-       
         <FoodAnimation/>
         <Specialities/>
         <DishOfTheDay />

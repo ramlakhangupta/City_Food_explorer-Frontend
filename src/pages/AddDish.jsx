@@ -175,7 +175,7 @@ function AddDish() {
               required
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#a28c79]"
             >
-              <option value="">Select Category</option>
+              <option  value="">Select Category</option>
               {categories.length > 0 ? (
                 categories.map((category, index) => (
                   <option key={index} value={category.dishTaste}>

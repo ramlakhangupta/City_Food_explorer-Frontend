@@ -1,16 +1,47 @@
-import React from 'react'
+import React from 'react';
 
 const Specialities = () => {
   return (
-    <div className="relative ">
-      <div className=' absolute bg-sindoor-gradient flex flex-row text-white uppercase py-5 pl-7
-                            left-[50%] translate-x-[-20%] translate-y-[-70%] mt-[-8rem] rounded-3xl'>
-            <div className='flex flex-row gap-5 items-center border-r border-caribbeangreen-300 px-7'>
-                <p className='text-[#3c3838d7] text-md lg:text-md font-semibold'>The Best Flavors are found <a className="text-2xl text-[#444441] lg:text-3xl font-bold">Not</a> in Menus, <a className="text-2xl text-[#444441] lg:text-3xl font-bold">But On The Streets !</a> </p>
-            </div>
-        </div>
-    </div>
-  )
-}
+    <div className="relative w-full px-4">
+      <div
+        className='
+          bg-sindoor-gradient 
+          text-white uppercase 
+          py-4 px-5 
+          rounded-3xl 
+          flex flex-col lg:flex-row 
+          items-center 
+          justify-center 
+          gap-3
 
-export default Specialities
+          // Desktop styles only
+          lg:py-5 lg:pl-7 
+          lg:absolute 
+          lg:left-[50%] 
+          lg:translate-x-[-20%] 
+          lg:translate-y-[-70%] 
+          lg:mt-[-8rem]
+          mt-4
+        '
+      >
+
+        <div className='
+          flex flex-col lg:flex-row 
+          gap-3 lg:gap-5 
+          items-center 
+          lg:border-r 
+          border-caribbeangreen-300 
+          px-3 lg:px-7
+        '>
+          <p className='text-sm sm:text-base text-center lg:text-start text-[#3c3838d7] font-semibold'>
+            The Best Flavors are found{" "}
+            <span className="text-xl sm:text-2xl lg:text-3xl text-[#444441] font-bold">Not</span> in Menus,{" "}
+            <span className="text-xl sm:text-2xl lg:text-3xl text-[#444441] font-bold">But On The Streets !</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Specialities;

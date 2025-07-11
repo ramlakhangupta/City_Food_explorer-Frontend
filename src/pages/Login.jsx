@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import backgroundImg from "../assets/loginbackground.jpg"
 import CustomToast from "../components/common/CustomToast"
 
-
 const cookies = new Cookies();
 const backendUrl = process.env.REACT_APP_BASE_URL;
 
@@ -36,7 +35,7 @@ const Login = () => {
       if(data.token) {
         cookies.set('token', data.token);
         cookies.set('user', data.foundUser);
-        toast.success("Login SuccessFully", {
+        toast.success("Login Successfully", {
           onClose: () => {
             window.location.href = '/'
           },
@@ -69,20 +68,20 @@ const Login = () => {
 
   return (
     <div
-      className=" w-full min-h-screen absolute bg-cover bg-center flex items-center justify-center px-4 md:h-[650px]  opacity-[1] "
-      style={{ backgroundImage: `url(${backgroundImg})` }} // Make sure image is in /public folder
+      className="w-full absolute min-h-screen bg-cover bg-center flex items-center justify-center px-4 py-8 lg:py-0"
+      style={{ backgroundImage: `url(${backgroundImg})` }}
     >
-      <div className="bg-white bg-opacity-90 shadow-xl mt-10 ml-[-20rem] rounded-xl w-full max-w-md p-8 backdrop-blur-sm">
+      <div className="bg-white bg-opacity-90 shadow-xl mt-6 lg:mt-10 lg:ml-[-20rem] rounded-xl w-full max-w-md mx-4 sm:mx-6 p-4 sm:p-6 md:p-8 backdrop-blur-sm">
         {/* Logo or Brand Name */}
-        <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-[#a28c79]">Welcome back !!</h1>
-          <p className="text-gray-600 mt-2">Please login to your account.</p>
+        <div className="text-center mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#a28c79]">Welcome back !!</h1>
+          <p className="text-gray-600 mt-2 text-sm sm:text-base">Please login to your account.</p>
         </div>
 
         {/* Login Form */}
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm sm:text-base font-medium text-gray-700">
               Email address
             </label>
             <input
@@ -90,14 +89,14 @@ const Login = () => {
               name="email"
               value={formdata.email} 
               onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79]"
+              className="mt-1 block w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79] text-sm sm:text-base"
               placeholder="you@example.com"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="block text-sm sm:text-base font-medium text-gray-700">
               Password
             </label>
             <input
@@ -105,13 +104,13 @@ const Login = () => {
               name="password"
               value={formdata.password} 
               onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79]"
+              className="mt-1 block w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79] text-sm sm:text-base"
               placeholder="••••••••"
               required
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
             <div className="flex items-center">
               <input
                 id="remember"
@@ -124,7 +123,7 @@ const Login = () => {
             </div>
 
             <div className="text-sm">
-              <Link to="/forgot-password" className="font-medium text-[#a28c79] hover:text-[#8b7766]">
+              <Link to="/signup" className="font-medium text-[#a28c79] hover:text-[#8b7766]">
                 Forgot your password?
               </Link>
             </div>
@@ -132,20 +131,18 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#a28c79] text-white py-2 px-4 rounded-lg shadow-md hover:text-[#000000] hover:bg-[#f0c9a6] hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 active:scale-95"
-            
+            className="w-full bg-[#a28c79] text-white py-2 px-4 rounded-lg shadow-md hover:text-[#000000] hover:bg-[#f0c9a6] hover:shadow-lg transition-all duration-300 ease-in-out transform text-sm sm:text-base hover:-translate-y-1 active:scale-95"
           >
-            Sign in
+            Login
           </button>
         </form>
 
-        
-      <CustomToast />
+        <CustomToast />
 
         {/* Divider */}
-        <div className="mt-6 flex items-center justify-center">
+        <div className="mt-4 sm:mt-6 flex items-center justify-center flex-wrap gap-1">
           <span className="text-gray-500 text-sm">Don't have an account?</span>
-          <Link to="/signup" className="ml-2 text-[#a28c79] font-medium hover:text-[#8b7766]">
+          <Link to="/signup" className="text-[#a28c79] font-medium hover:text-[#8b7766] text-sm sm:text-base">
             Sign up
           </Link>
         </div>

@@ -17,7 +17,7 @@ const PersonalGreeting = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.1 }}
-      className="mt-16 bg-[#a28c79]/80 rounded-2xl shadow-xl w-[90%] md:w-[80%] mx-auto p-8 text-white text-center"
+      className="mt-16 z-50 bg-[#a28c79]/80 rounded-2xl shadow-xl w-[90%] md:w-[80%] mx-auto p-8 text-white text-center"
     >
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
         {user ? `Hi, ${user.name}! 👋` : "Welcome Foodie! 🍽️"}

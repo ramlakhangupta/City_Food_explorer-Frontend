@@ -63,7 +63,7 @@ function App() {
 
             {/* go upward arrow */}
             <button onClick={() => window.scrollTo(0, 0)}
-                className={`bg-[#c19a78] hover:bg-[#cd7f3b] hover:scale-110 p-3 text-lg text-black rounded-2xl fixed right-3 z-10 duration-500 ease-in-out ${showArrow ? 'bottom-6' : '-bottom-24'} `} >
+                className={`bg-[#c19a78] hover:bg-[#cd7f3b] hover:scale-110 p-3 text-lg text-black rounded-2xl fixed right-3 z-[99999] duration-500 ease-in-out ${showArrow ? 'bottom-6' : '-bottom-24'} `} >
                 <HiArrowNarrowUp />
             </button>
             

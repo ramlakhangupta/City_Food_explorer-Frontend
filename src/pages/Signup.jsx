@@ -62,20 +62,20 @@ const Signup = () => {
 
   return (
     <div
-      className="w-full absolute min-h-screen bg-cover bg-center flex items-center justify-center px-4"
+      className="w-full absolute min-h-screen bg-cover bg-center flex items-center justify-center px-4 py-8 lg:py-0"
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
-      <div className="bg-white bg-opacity-90 shadow-xl rounded-xl w-full max-w-2xl mt-[4rem] mr-[25rem] p-10 backdrop-blur-sm">
+      <div className="bg-white bg-opacity-90 shadow-xl rounded-xl w-full max-w-2xl mt-4 lg:mt-[4rem] lg:mr-[25rem] mx-auto p-4 sm:p-6 md:p-8 backdrop-blur-sm">
         {/* Header */}
-        <div className="text-center mb-6">
-          <h1 className="text-3xl font-bold text-[#a28c79]">Welcome to City Food Explorer !!</h1>
-          <p className="text-gray-600 mt-2">Please fill all the details.</p>
+        <div className="text-center mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#a28c79]">Welcome to City Food Explorer !!</h1>
+          <p className="text-gray-600 mt-2 text-sm sm:text-base">Please fill all the details.</p>
         </div>
 
         {/* Signup Form */}
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="name" className="block text-sm sm:text-base font-medium text-gray-700">
               Full Name
             </label>
             <input
@@ -83,14 +83,14 @@ const Signup = () => {
               name="name"
               value={formdata.name}
               onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79]"
+              className="mt-1 block w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79] text-sm sm:text-base"
               placeholder="Ramlakhan Gupta"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm sm:text-base font-medium text-gray-700">
               Email address
             </label>
             <input
@@ -98,16 +98,16 @@ const Signup = () => {
               name="email"
               value={formdata.email} 
               onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79]"
+              className="mt-1 block w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79] text-sm sm:text-base"
               placeholder="you@example.com"
               required
             />
           </div>
 
-          {/* Flex Passwords */}
-          <div className="flex flex-col md:flex-row gap-4">
+          {/* Passwords */}
+          <div className="flex flex-col md:flex-row gap-3 sm:gap-4">
             <div className="w-full">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm sm:text-base font-medium text-gray-700">
                 Password
               </label>
               <input
@@ -115,31 +115,27 @@ const Signup = () => {
                 name="password" 
                 value={formdata.password}
                 onChange={handleChange}
-                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79]"
+                className="mt-1 block w-full px-3 py-2 sm:px-4 sm:py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#a28c79] text-sm sm:text-base"
                 placeholder="••••••••"
                 required
               />
             </div>
-
           </div>
 
           <button
             type="submit"
-            onClick={handleSubmit}
-            className="w-full bg-[#a28c79] text-white py-2 px-4 rounded-lg shadow-md hover:text-[#000000] hover:bg-[#f0c9a6] hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 active:scale-95"
+            className="w-full bg-[#a28c79] text-white py-2 px-4 rounded-lg shadow-md hover:text-[#000000] hover:bg-[#f0c9a6] hover:shadow-lg transition-all duration-300 ease-in-out transform text-sm sm:text-base hover:-translate-y-1 active:scale-95"
           >
             Create Account
           </button>
         </form>
 
-       
-      <CustomToast />
-
+        <CustomToast />
 
         {/* Login link */}
-        <div className="mt-6 flex items-center justify-center">
-          <span className="text-gray-500 text-sm">Already have an account?</span>
-          <Link to="/login" className="ml-2 text-[#a28c79] font-medium hover:text-[#8b7766]">
+        <div className="mt-4 sm:mt-6 flex items-center justify-center">
+          <span className="text-gray-500 text-xs sm:text-sm">Already have an account?</span>
+          <Link to="/login" className="ml-2 text-[#a28c79] font-medium hover:text-[#8b7766] text-sm sm:text-base">
             Login
           </Link>
         </div>
@@ -148,4 +144,4 @@ const Signup = () => {
   );
 };
 
-export default Signup; 
+export default Signup;

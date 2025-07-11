@@ -193,20 +193,38 @@ const Food = () => {
             Explore Food by Category 🍽️
           </h1>
 
-          {/* Dropdown */}
-          <div className="mb-8 flex justify-center">
-            <select
-              className="bg-[#ffffff] text-[#1f1f1f] py-2 px-10 rounded-2xl text-2xl font-semibold shadow-lg border-2 border-[#ffba7e] focus:outline-none focus:ring-4 focus:ring-[#a28c79] transition duration-300 hover:scale-105 cursor-pointer"
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-            >
-              {categories.map((category) => (
-                <option key={category._id} value={category.dishTaste} className="text-xl">
-                  {category.dishTaste}
-                </option>
-              ))}
-            </select>
-          </div>
+          {/* Responsive Dropdown */} 
+        <div className="mb-8 flex justify-center">
+          <select
+            className="bg-white text-[#1f1f1f]
+                      py-2 
+                      px-4 sm:px-6 md:px-8 lg:px-12 
+                      rounded-2xl 
+                      text-base sm:text-lg md:text-xl xl:text-3xl 
+                      font-semibold 
+                      shadow-lg 
+                      border-2 border-[#ffba7e] 
+                      focus:outline-none focus:ring-4 focus:ring-[#a28c79] 
+                      transition duration-300 
+                      hover:scale-105 
+                      cursor-pointer 
+                      w-[80%] sm:w-[70%] md:w-[50%] xl:w-[300px]"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            {categories.map((category) => (
+              <option
+                key={category._id}
+                value={category.dishTaste}
+                className="text-base sm:text-lg md:text-xl xl:text-2xl"
+              >
+                {category.dishTaste}
+              </option>
+            ))}
+          </select>
+        </div>
+
+
         </div>
 
         {/* Category Header */}
